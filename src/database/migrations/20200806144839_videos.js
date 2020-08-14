@@ -4,7 +4,7 @@ exports.up = function(knex) {
   
     table.string('categoryName').notNullable()
     table.string('link').notNullable()
-    table.string('cor').notNullable()
+    table.string('color').notNullable()
 })
 
 };

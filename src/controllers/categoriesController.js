@@ -2,7 +2,7 @@ const connection = require('../database/connection')
 
 module.exports={
   async create(req, res){
-    const {categoryName, link, cor} = req.body
+    const {categoryName, link, color} = req.body
 
     const hasCaregory = await connection('categories').where('categoryName', categoryName).first()
     
@@ -13,7 +13,7 @@ module.exports={
     const category = await connection('categories').insert({
       categoryName,
       link,
-      cor
+      color
     })
 
    
@@ -28,7 +28,6 @@ module.exports={
 
     return res.json(categories)
   },
-
 
 }
 

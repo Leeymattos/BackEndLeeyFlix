@@ -32,13 +32,13 @@ module.exports = {
     return res.json(videos)
   },
 
-  async listComplete(req, res){
+  async listEspecfic(req, res){
+    const {id} = req.params
 
+    const videos = await connection('videos')
+    .where('categories_id', id).select('*')
 
-    const Catevideo = await connection('videos')
-    .join('categories', 'categories_id', '=', 'videos.categories_id').select('*')
-
-    return res.json(Catevideo)
-
+    return res.json(videos)
   }
+
 }

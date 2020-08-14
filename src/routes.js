@@ -10,6 +10,7 @@ routes.get('/cadastro/categoria', categoriesController.list)
 
 routes.post('/cadastro/video', videosController.create)
 routes.get('/cadastro/video', videosController.list)
-routes.get('/videos', videosController.listComplete)
+routes.get('/videos/:id', videosController.listEspecfic)
+
 
 module.exports = routes
