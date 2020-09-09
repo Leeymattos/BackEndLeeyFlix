@@ -1,8 +1,8 @@
 exports.up = function(knex) {
-  return knex.schema.createTable('categories', function(table){
+  return knex.schema.createTable('seasons', function(table){
     table.increments('id')
   
-    table.string('categoryName').notNullable()
+    table.string('season_number').notNullable()
     table.string('link').notNullable()
     table.string('color').notNullable()
 })
@@ -10,6 +10,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('categories')
+  return knex.schema.dropTable('seasons')
 
 };

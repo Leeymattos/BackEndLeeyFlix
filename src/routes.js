@@ -1,16 +1,18 @@
 const express = require('express')
 
-const categoriesController = require('./controllers/categoriesController')
+const seasonController = require('./controllers/seasonControllers')
 const videosController = require('./controllers/videosControllers')
+const userController = require('./controllers/userControllers')
 
 const routes = express.Router()
 
-routes.post('/cadastro/categoria', categoriesController.create)
-routes.get('/cadastro/categoria', categoriesController.list)
+routes.post('/register/season', seasonController.create)
+routes.get('/register/season', seasonController.list)
 
-routes.post('/cadastro/video', videosController.create)
-routes.get('/cadastro/video', videosController.list)
-routes.get('/videos/:id', videosController.listEspecfic)
+routes.post('/register/video', videosController.create)
+routes.get('/register/video', videosController.list)
 
+routes.post('/register/user', userController.create)
+routes.post('/login/user', userController.login)
 
 module.exports = routes
